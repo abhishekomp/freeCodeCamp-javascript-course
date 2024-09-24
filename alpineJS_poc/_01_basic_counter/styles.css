@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+:root{
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+
+  --clr-black: #222;
+  --clr-white: #fff;
+
+  --clr-green-dark: hsl(125, 67%, 44%);
+
+  --radius: 0.5rem;
+
+  --transition: all 0.3s linear;
+}
+
+
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  font-size: 0.875rem;
+}
+
+.btn {
+  text-transform: uppercase;
+  background: transparent;
+  /*color: var(--clr-black);*/
+  padding: 0.375rem 0.75rem;
+  /*letter-spacing: var(--spacing);*/
+  display: inline-block;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: 2px solid var(--clr-black);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+}
+.btn:hover {
+  color: var(--clr-white);
+  background: var(--clr-green-dark);
+}

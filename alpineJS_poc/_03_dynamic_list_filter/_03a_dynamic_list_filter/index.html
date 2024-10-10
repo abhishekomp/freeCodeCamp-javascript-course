@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Filter List</title>
+  </head>
+  <body>
+    <div
+      class="container"
+      x-data="
+        {
+          search: '',
+          
+          items: ['foo', 'bar', 'baz'],
+
+          get filteredItems() {
+            return this.items.filter(
+              i => i.startsWith(this.search)
+            )
+          }
+        }"
+    >
+      <input
+        x-model="search"
+        type="text"
+        name="search"
+        id="search"
+        placeholder="Search..."
+      />
+      <ul>
+        <template x-for="item in filteredItems">
+          <li x-text="item" style="color: brown; font-size: 1.25rem"></li>
+        </template>
+      </ul>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>

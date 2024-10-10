@@ -25,6 +25,21 @@ body {
   font-size: 0.875rem;
 }
 
+.container{
+  margin: 1rem;
+  /*
+  border: 1px solid salmon;
+  */
+  /*
+  display: flex;
+  flex-direction: column;
+  */
+  /*
+  justify-content: space-between;
+  */
+  /*align-items: center;*/
+}
+
 .btn {
   text-transform: uppercase;
   background: transparent;

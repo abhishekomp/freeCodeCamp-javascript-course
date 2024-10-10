@@ -8,7 +8,7 @@ document.addEventListener('alpine:init', () => {
       },
 
       increment() {
-          this.count = this.count + 1
+          this.count = this.count + 10
       },
       
       reset() {

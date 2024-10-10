@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show/Hide Content</title>
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" x-data="{ open: false }">
+      <button class="btn" @click="open = !open" x-text="open ? 'Hide' : 'Show'">
+        Show
+      </button>
+      <h2 x-show="open" x-transition.duration.500ms>Some content</h2>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>

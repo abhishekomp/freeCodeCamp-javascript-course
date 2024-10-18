@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamically Add to List using AlpineJS</title>
+  </head>
+  <body>
+    <div
+      x-data="
+      {
+        newPerson: '',
+        people: ['chris', 'kap', 'lynne'],
+        addToPeople() {this.people.push(this.newPerson)}
+      }"
+    >
+      <form x-on:submit.prevent="addToPeople">
+        <input x-model="newPerson" type="text" placeholder="New name..." />
+        <button>Add person</button>
+      </form>
+      <template x-for="person in people">
+        <li x-text="person"></li>
+      </template>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>

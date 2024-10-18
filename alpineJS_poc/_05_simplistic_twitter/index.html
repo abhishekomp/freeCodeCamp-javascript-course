@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Twitter</title>
+    <style>
+      .red {
+        color: red;
+        font-size: xx-large;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      x-data="{
+        tweet : 'write something'
+    }"
+    >
+      <textarea x-model="tweet"></textarea>
+      <div
+        x-text="tweet.length"
+        x-bind:class="tweet.length > 20 ? 'red' : ''"
+      ></div>
+      <div x-show="tweet.length > 20" style="font-size: xx-large">
+        Tweet exceeded the allowed length of 20 characters
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>

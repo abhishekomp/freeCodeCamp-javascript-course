@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>x-bind for class demo</title>
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
+  </head>
+  <body>
+    <h1>Toggling options on click of button</h1>
+    <div x-data="{open: false}">
+      <button class="btn" @click="open = !open" x-text="open ? 'Hide' : 'Show'">
+        Show
+      </button>
+      <!--The expression ":class="{ 'hidden': ! open }" is shorthand for x-bind:class 
+          and it will evaluate the javascript expression "! open" and if it is true then it will put the 'hidden' class on the class attribute of the current element. 
+          If the javascript expression is false, it will remove the 'hidden' class from the class attribute of this element.-->
+      <div class="hidden" :class="{ 'hidden': ! open }">
+        Hello again, I am visible again!!!
+      </div>
+      <div x-text="'Value of open is: ' + open">Hello again</div>
+      <select
+        class="opacity-50"
+        :class="open && 'hidden'"
+        name="fruits"
+        id="fruitsId"
+      >
+        <option value="banana">Banana</option>
+        <option value="pears">Pears</option>
+        <option value="kaki">Kaki</option>
+      </select>
+      <!-- <select x-show="open" name="fruits" id="fruitsId">
+        <option value="mango">Mango</option>
+        <option value="kiwi">Kiwi</option>
+        <option value="strawberry">Strawberry</option>
+      </select> -->
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>

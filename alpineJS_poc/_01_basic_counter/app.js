@@ -5,6 +5,7 @@ document.addEventListener('alpine:init', () => {
       init() {
         console.log("Inside init() function")
         this.count = 100;
+        this.anotherFunc(this.count); //invoking another function in the js file
       },
 
       increment() {
@@ -13,6 +14,11 @@ document.addEventListener('alpine:init', () => {
       
       reset() {
         this.count = 100
-      }  
+      },
+
+      anotherFunc(pageNo) {
+        console.log("inside anotherFunc");
+        console.log("Page No:", pageNo);
+      }
   }))
 })
